@@ -148,8 +148,14 @@ class Discovery(object):
         value pairs extracted from the response.
     '''
 
+    #: Case-insensitive dictionary of header name to header value pairs
+    #: extracted from the response.
+    #headers = None
+
     def __init__(self, headers):
         '''
+        Create instance from SSDP response headers.
+
         Args:
             headers: Dictionary containing header name to header value
                 mappings.
