@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 
-# Project skeleton maintained at https://github.com/the-allanc/skeleton
-# All the hard work done by jaraco at https://github.com/jaraco/skeleton
-
 #
 # Extract the project identity from the README.
 #
@@ -38,8 +35,7 @@ description = get_description()
 
 params = dict(
     name=name,
-    version='0.1',  # SKELETON: Remove if not using bumpversion.
-    use_scm_version=True,  # SKELETON: Remove if not using setuptools_scm.
+    version='0.1',
     author="Allan Crooks",
     author_email="allan@increment.one",
     description=summary or name,
@@ -47,8 +43,7 @@ params = dict(
     license='MIT',
     url=url,
     keywords=[],
-    py_modules=['SKELETON'],  # SKELETON: Remove if multiple module project.
-    packages=setuptools.find_packages(exclude=['tests']),  # SKELETON: Remove if single module.
+    packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
     namespace_packages=name.split('.')[:-1],
     python_requires='>=2.7',
@@ -69,12 +64,9 @@ params = dict(
             'collective.checkdocs',
         ],
     },
-    setup_requires=[
-        'setuptools_scm>=1.15.0',  # SKELETON: Remove if not using setuptools_scm.
-    ],
     classifiers=[
-        # "Development Status :: 3 - Alpha",
-        "Development Status :: 4 - Beta",
+        "Development Status :: 3 - Alpha",
+        # "Development Status :: 4 - Beta",
         # "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
