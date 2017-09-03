@@ -1,5 +1,5 @@
 .. |name| replace:: greyupnp
-.. |summary| replace:: Not all the Python UPnP tools you could ever want. But some.
+.. |summary| replace:: Not **all** the Python UPnP tools you could ever want. But some.
 
 |name|
 ======
@@ -35,8 +35,6 @@
 .. |Code Climate| image:: https://img.shields.io/codeclimate/issues/github/the-allanc/greyupnp.svg
     :target: codeclimate_
     :alt: Code Climate
-
-Not all the Python UPnP tools you could ever want. But some.
 
 |Docs| |Release Version| |Python Version| |License| |Build Status| |Coverage| |Code Climate|
 

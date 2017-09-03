@@ -19,10 +19,10 @@ API
 ---
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 1
 
-.. first_document_here - just uncomment
-.. second_document_here - just uncomment
+   ssdp
+
 
 
 Indices and tables
