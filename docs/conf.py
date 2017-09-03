@@ -58,3 +58,10 @@ with io.open('../README.rst', encoding='utf-8') as readme:
 
 if html_theme == 'yeen' and repo_url.startswith('https://github.com'):
     html_theme_options = {'github_url': repo_url}
+
+# greyupnp should be grey!
+html_theme_options.update({
+    'mainlightcolor': '#aaa',
+    'maincolor': '#888',
+    'github_color': '#666',
+})
