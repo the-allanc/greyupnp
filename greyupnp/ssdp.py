@@ -74,17 +74,15 @@ def decode_response(data):
     return res
 
 
-def request_via_socket(sock, target_type=None):
+def request_via_socket(sock, search_target):
     '''Send an SSDP search request via the provided socket.
 
     Args:
         sock: A socket suitable for use to send a broadcast message - preferably
             one created by :py:func:`make_socket`.
-        target_type (string): A :term:`resource type` target to search for.
+        search_target (string): A :term:`resource type` target to search for.
     '''
-    msgparts = dict(HOST=MCAST_IP_PORT, MAN='"ssdp:discover"', MX='3')
-    if target_type:
-        msgparts['ST'] = target_type
+    msgparts = dict(HOST=MCAST_IP_PORT, MAN='"ssdp:discover"', MX='3', ST=search_target)
     msg = encode_request('M-SEARCH * HTTP/1.1', **msgparts)
     sock.sendto(msg, (MCAST_IP, MCAST_PORT))
 
