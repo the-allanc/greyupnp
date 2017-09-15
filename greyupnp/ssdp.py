@@ -209,7 +209,7 @@ class Discovery(object):
         return self.location, self.type
 
     def __eq__(self, other):
-        if not isinstance(other, Discovery):
+        if isinstance(other, Discovery):
             return self._id == other._id
         return False
 
