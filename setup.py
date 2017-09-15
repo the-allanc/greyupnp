@@ -42,7 +42,7 @@ params = dict(
     long_description=description,
     license='MIT',
     url=url,
-    keywords=[],
+    keywords=['upnp', 'ssdp'],
     packages=setuptools.find_packages(exclude=['tests']),
     include_package_data=True,
     namespace_packages=name.split('.')[:-1],
