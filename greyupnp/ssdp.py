@@ -226,11 +226,13 @@ def search(target_types=None, timeout=12, tries=3):
 
     Args:
         target_types (sequence of strings): A sequence of :term:`resource types`
-            to search for. Normally, a general discovery search is made, but if
-            specific targets are provided, then this function will make
-            individual requests searching for specific targets - this is
-            sometimes required as some devices will not respond unless they are
-            specifically requested by the search.
+            to search for. For convenience, this can also be a single string. If
+            provided, then this function will make individual requests searching
+            for specific targets - this is sometimes required as some devices
+            will not respond unless they are specifically requested by the search. 
+            
+            If not given, then a search won't be broadcast, but we will still
+            listen for SSDP notification responses.
 
         timeout (int / float): Overall time in seconds for how long to wait for
             before no longer listening for responses.
@@ -242,14 +244,17 @@ def search(target_types=None, timeout=12, tries=3):
         :py:class:`Discovery` instances describing each result found - any
         duplicate results will be filtered out by this function.
     '''
+    if isinstance(target_types, six.string_types):
+        target_types = [target_types]
+
     seen = set()
     timeout = float(timeout) / tries
     type_filter = set(target_types) if target_types else None
-    target_types = target_types or [None]
     with contextlib.closing(make_socket()) as sock:
         for i in range(tries):
-            for target_type in target_types:
-                request_via_socket(sock, target_type)
+            if target_types:
+                for target_type in target_types:
+                    request_via_socket(sock, target_type)
             for response in responses_from_socket(sock, timeout):
                 discovery = Discovery(response)
                 if discovery in seen:
