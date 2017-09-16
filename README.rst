@@ -14,25 +14,25 @@
 .. _travis: https://travis-ci.org/the-allanc/greyupnp
 .. _codeclimate: https://codeclimate.com/github/the-allanc/greyupnp
 
-.. |Build Status| image:: https://img.shields.io/travis/the-allanc/greyupnp.svg
+.. |Build Status| image:: https://img.shields.io/travis/the-allanc/greyupnp.svg?colorB=9f9f9f
     :target: travis_
     :alt: Build Status
-.. |Coverage| image:: https://img.shields.io/coveralls/the-allanc/greyupnp.svg
+.. |Coverage| image:: https://img.shields.io/coveralls/the-allanc/greyupnp.svg?colorB=9f9f9f
     :target: coveralls_
     :alt: Coverage
-.. |Docs| image:: https://readthedocs.org/projects/greyupnp/badge/?version=stable&style=flat
+.. |Docs| image:: https://img.shields.io/badge/docs-stable-lightgrey.svg
     :target: documentation_
     :alt: Docs
-.. |Release Version| image:: https://img.shields.io/pypi/pyversions/greyupnp.svg
+.. |Release Version| image:: https://img.shields.io/pypi/pyversions/greyupnp.svg?colorB=9f9f9f
     :target: pypi_
     :alt: Release Version
-.. |Python Version| image:: https://img.shields.io/pypi/v/greyupnp.svg
+.. |Python Version| image:: https://img.shields.io/pypi/v/greyupnp.svg?colorB=9f9f9f
     :target: pypi_
     :alt: Python Version
-.. |License| image:: https://img.shields.io/pypi/l/greyupnp.svg
+.. |License| image:: https://img.shields.io/pypi/l/greyupnp.svg?colorB=9f9f9f
     :target: license_
     :alt: License
-.. |Code Climate| image:: https://img.shields.io/codeclimate/issues/github/the-allanc/greyupnp.svg
+.. |Code Climate| image:: https://img.shields.io/codeclimate/issues/github/the-allanc/greyupnp.svg?colorB=9f9f9f
     :target: codeclimate_
     :alt: Code Climate
 
