@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 import contextlib
 from requests.structures import CaseInsensitiveDict
-from functools import total_ordering
+import crookbook
 import six
 import socket
 import struct
@@ -127,8 +127,8 @@ def responses_from_socket(sock, timeout=10):
         continue
 
 
-@six.python_2_unicode_compatible
-@total_ordering
+@crookbook.essence('location type', mutable=False)
+@crookbook.described(inner="{0.type!r} at {0.location}")
 class Discovery(object):
     '''This class describes a discovered resource, from either a SSDP search
     response or SSDP advertisement.
@@ -197,27 +197,6 @@ class Discovery(object):
         '''
         parsed = self.parsed
         return host in (parsed.hostname, parsed.netloc)
-
-    def __repr__(self):
-        return self.__str__()
-
-    def __str__(self):
-        return '<Discovery "{0.type}" at {0.location}>'.format(self)
-
-    @property
-    def _id(self):
-        return self.location, self.type
-
-    def __eq__(self, other):
-        if isinstance(other, Discovery):
-            return self._id == other._id
-        return False
-
-    def __lt__(self, other):
-        return self._id < other._id
-
-    def __hash__(self):
-        return hash(self._id)
 
 
 def search(target_types=None, timeout=12, tries=3):
