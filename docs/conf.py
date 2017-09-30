@@ -21,6 +21,9 @@ master_doc = 'index'
 autodoc_member_order = 'bysource'
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 
+# Stops module name being prefixed to API documentation.
+add_module_names = False
+
 # This allows the conf_as_extension module to be imported.
 sys.path.append(os.path.dirname(__file__))
 
@@ -65,3 +68,11 @@ html_theme_options.update({
     'maincolor': '#888',
     'github_color': '#666',
 })
+
+with io.open('index.rst', encoding='utf-8') as index_contents:
+    # If we're embedding an API file in the main document (presumably just one of them), then
+    # exclude individual generation of the API document file, otherwise Sphinx will complain
+    # about duplicate object description.
+    if '.. include:: api/' in index_contents.read():
+        exclude_patterns = ['api/*.rst']
+    del index_contents

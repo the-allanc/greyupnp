@@ -12,8 +12,10 @@ script:
 - python setup.py checkdocs
 - py.test --cov greyupnp/
 - sphinx-build -W docs/ build/docs/
+- pylint --disable=W greyupnp/
 after_script:
 - flake8
+- pylint greyupnp/
 branches:
   except:
   - skeleton

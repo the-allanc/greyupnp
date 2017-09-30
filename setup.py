@@ -35,7 +35,7 @@ description = get_description()
 
 params = dict(
     name=name,
-    version='0.1',
+    use_scm_version=True,
     author="Allan Crooks",
     author_email="allan@increment.one",
     description=summary or name,
@@ -65,9 +65,12 @@ params = dict(
             'collective.checkdocs',
         ],
     },
+    setup_requires=[
+        'setuptools_scm>=1.15.0',
+    ],
     classifiers=[
-        "Development Status :: 3 - Alpha",
-        # "Development Status :: 4 - Beta",
+        # "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         # "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
