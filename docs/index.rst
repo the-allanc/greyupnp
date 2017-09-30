@@ -21,7 +21,7 @@ API
 .. toctree::
    :maxdepth: 1
 
-   ssdp
+   api/ssdp
 
 
 
